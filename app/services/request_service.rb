@@ -3,7 +3,7 @@ class RequestService
 
   def perform!
     disruptions = parse_data(get_data)
-   fetch_disruptions(disruptions)
+    optimize_data(fetch_disruptions(disruptions))
   end
 
   def get_data
@@ -11,14 +11,25 @@ class RequestService
   end
 
   def parse_data(response)
-    result = Nokogiri::XML(response.body).remove_namespaces!
-    puts result
-    result
+    Nokogiri::XML(response.body).remove_namespaces!
   end
 
   def fetch_disruptions(disruptions)
     disruptions.xpath('//Disruptions/Disruption')
   end
 
+  def optimize_data(disruptions)
+    disruptions.map do |disruption|
+      id = disruption.attribute('id')
+      coordinates = disruption.xpath('.//Point/coordinatesLL').text
+      location = disruption.xpath('.//location').text
+      coordinates = coordinates.split(',').map {|coord| coord.to_f}
 
+      {
+          id: id,
+          location: location,
+          coords: {lng: coordinates.first, lat: coordinates.last},
+      }
+    end
+  end
 end
