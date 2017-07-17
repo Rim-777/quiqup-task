@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test Task of www.quiqup.com
+TFL TIMS feed
+TFL (Transport for London) have a live traffic disruptions 
+feed called TIMS which can be found at Live Traffic Disruptions - TIMS, 
+this and other feeds can be retrieved from https://api-portal.tfl.gov.uk/docs.
+ You can use the feed immediately as it is public.
+What I would like to see is a basic app that will consume the XML feed and 
+show a map on a webpage with pins to highlight the locations of the disruptions.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The task is finished.
