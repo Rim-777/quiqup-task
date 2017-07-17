@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>QuiqupTask</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>QuiqupTask</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=false" %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <span class="mdl-layout-title">London Live Traffic Disruptions </span>
+    <nav class="mdl-navigation">
+          <span class="refresh">
+              <button class="mdl-button
+                              mdl-js-button
+                              mdl-button--raised
+                              mdl-js-ripple-effect
+                              mdl-button--accent
+                              refresh-button">
+                Click to refresh
+              </button>
+            </span>
+    </nav>
+  </div>
+</header>
+<%= yield %>
+
+<footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Timo Moss Test</div>
+  </div>
+</footer>
+</body>
 </html>
