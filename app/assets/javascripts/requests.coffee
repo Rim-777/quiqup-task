@@ -8,6 +8,3 @@ jQuery ->
   $(".refresh-button").on "click", (e) =>
     e.preventDefault()
     fetch_data('<div class="mdl-spinner mdl-js-spinner s-active">Loading....</div>')
-
-
-
