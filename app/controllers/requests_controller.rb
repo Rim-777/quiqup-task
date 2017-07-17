@@ -5,7 +5,6 @@ class RequestsController < ApplicationController
 
   def fetch_data
     @response = RequestService.new.perform!
-
-    puts @response.to_json
+    render json: @response.to_json
   end
 end
