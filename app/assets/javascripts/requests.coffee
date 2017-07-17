@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+fetch_data =  ->
+  $.get '/requests/fetch_data', {}, (response)->
+    console.log(response)
+
+
+jQuery ->
+  fetch_data()
