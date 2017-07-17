@@ -3,7 +3,6 @@
 <head>
   <title>QuiqupTask</title>
   <%= csrf_meta_tags %>
-
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=false" %>
@@ -14,6 +13,7 @@
   <div class="mdl-layout__header-row">
     <span class="mdl-layout-title">London Live Traffic Disruptions </span>
     <nav class="mdl-navigation">
+
           <span class="refresh">
               <button class="mdl-button
                               mdl-js-button
@@ -24,9 +24,11 @@
                 Click to refresh
               </button>
             </span>
+
     </nav>
   </div>
 </header>
+
 <%= yield %>
 
 <footer class="mdl-mini-footer">
@@ -34,5 +36,6 @@
     <div class="mdl-logo">Timo Moss Test</div>
   </div>
 </footer>
+
 </body>
 </html>
